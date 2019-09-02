@@ -5,7 +5,7 @@ import gql from 'graphql-tag'
 const SEND_MESSAGE_MUTATION = gql`
   mutation($text: String!) {
     sendMessage(text: $text) {
-      _id
+      id
       text
     }
   }
