@@ -21,10 +21,9 @@ const NEW_MESSAGE_SUBSCRIPTION = gql`
 `
 
 const updateQuery = (previousResult, { subscriptionData }) => {
-  console.log({ previousResult, subscriptionData })
-  const newMessage = { ...subscriptionData.data.messageSent }
+  const { messageSent } = subscriptionData.data
   return {
-    messages: [...previousResult.messages, newMessage],
+    messages: [...previousResult.messages, messageSent],
   }
 }
 
